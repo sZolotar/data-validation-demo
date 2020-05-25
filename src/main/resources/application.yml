@@ -1,0 +1,15 @@
+---
+server:
+  port: ${SERVER_PORT:9680}
+
+---
+spring:
+  kafka:
+    properties:
+      auto-offset-reset: ${OFFSET_RESET:latest}
+      num.streams.thread: ${STREAMS_THREAD_NUM:4}
+
+    streams:
+      bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:29091}
+      application-id: ${APPLICATION_ID:data_validator}
+      replication-factor: ${REPLICATION_FACTOR:1}
